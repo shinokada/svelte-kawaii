@@ -1,1 +1,1 @@
-import { MOODS } from './utils/constants.ts';
+import { MOODS } from './utils/constants';
