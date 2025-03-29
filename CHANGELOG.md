@@ -1,5 +1,17 @@
 # svelte-kawaii
 
+## 0.1.8
+
+### Patch Changes
+
+- types update
+
+## 0.1.7
+
+### Patch Changes
+
+- fix: ...props
+
 ## 0.1.6
 
 ### Patch Changes

@@ -18,7 +18,7 @@ export { default as Face } from './Face.svelte';
 
 export * from './utils/constants';
 
-export type { KawaiiMood, KawaiiProps, KawaiiFaceProps, FaceProps } from './types';
+export type { KawaiiMood, KawaiiProps, KawaiiFaceProps } from './types';
 
 export const getFaceScale = (size: number) => {
 	return size / 66;

@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { paths } from './utils/paths';
-	export type FaceProps = {
+
+	type FaceProps = {
 		mood: 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
 		transform: string;
 		uniqueId: string;
 	};
 
-	let { mood = 'blissful', uniqueId = crypto.randomUUID(), transform = '' }: FaceProps = $props();
+	let { mood = 'blissful', uniqueId, transform = '' }: FaceProps = $props();
 </script>
 
-<g id="kawaii-face" {transform}>
+<g id="kawaii-face" {transform} aria-label={`Kawaii face with ${mood} mood`} role="img">
 	<defs>
 		<path d={paths.defs} id="kawaii-face__path-1" />
 	</defs>
@@ -99,6 +100,6 @@
 [Go to docs](https://svelte-kawaii.codewithshin.com/)
 ## Props
 @props: mood: any = 'blissful';
-@props:uniqueId: any = crypto.randomUUID();
+@props:uniqueId: any;
 @props:transform: any = '';
 -->

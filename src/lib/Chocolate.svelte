@@ -6,7 +6,7 @@
 		mood = 'blissful',
 		color = '#A6E191',
 		uniqueId = crypto.randomUUID(),
-		...props
+		...restProps
 	}: KawaiiProps = $props();
 
 	const figmaFaceScale = getFaceScale(53.99);
@@ -20,7 +20,7 @@
 	height={size}
 	viewBox="0 0 240 240"
 	fill="none"
-	{...props}
+	{...restProps}
 >
 	<path
 		d="M166.389 201.19a4 4 0 0 1-4 4H78a4 4 0 0 1-4-4V39a4 4 0 0 1 4-4h84.389a4 4 0 0 1 4 4v162.19Z"

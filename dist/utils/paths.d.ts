@@ -1,4 +1,4 @@
-export declare const paths: {
+export interface Paths {
     defs: string;
     tongue: string;
     happy: string;
@@ -11,4 +11,5 @@ export declare const paths: {
     shocked2: string;
     ko1: string;
     ko2: string;
-};
+}
+export declare const paths: Paths;

@@ -6,7 +6,7 @@
 		mood = 'blissful',
 		color = '#A6E191',
 		uniqueId = crypto.randomUUID(),
-		...props
+		...restProps
 	}: KawaiiProps = $props();
 
 	const figmaFaceScale = getFaceScale(40.5);
@@ -19,7 +19,7 @@
 	viewBox="0 0 240 240"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
-	{...props}
+	{...restProps}
 >
 	<path
 		fill-rule="evenodd"
