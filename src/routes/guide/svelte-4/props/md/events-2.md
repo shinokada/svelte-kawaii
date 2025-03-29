@@ -1,1 +1,0 @@
-<AdminLineUserFaces on:click="{handleClick}" />

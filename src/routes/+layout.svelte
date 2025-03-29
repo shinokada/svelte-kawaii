@@ -63,18 +63,14 @@
 	const hasPath = (key: string) => currentUrl.includes(key);
 
 	const lis: LiType[] = [
-		{ name: 'Guide', href: '/guide/svelte-4/getting-started' },
-		{ name: '3-Tabs', href: '/three-tabs' },
-		{ name: '3-Tabs-tailwind', href: '/three-tabs-sizebytailwind' },
-		{ name: 'No-tabs', href: '/no-tabs' },
-		{ name: 'How to use', href: '/how-to-use' },
-		{ name: 'Quick start', href: '/quick-start' }
+		{ name: 'Home', href: '/' },
+		{ name: 'About', href: '/about' }
 	];
 	const brand = {
 		name: 'codewithshin.com',
 		href: 'https://codewithshin.com'
 	};
-	const urlsToIncludeSwitcherAndSidebar = ['/guide/', '/guide2/', '/how-to-use', '/quick-start'];
+	const urlsToIncludeSwitcherAndSidebar = ['/guide/', '/about', '/how-to-use', '/quick-start'];
 	/*eslint no-undef: "off"*/
 	const siteName = removeHyphensAndCapitalize(__NAME__);
 	const githubUrl = `https://github.com/shinokada/${__NAME__}`;
@@ -102,7 +98,7 @@
 			return url.startsWith(allowedUrl);
 		});
 	}
-	let urlsToIncludeSwitcher = ['/guide', '/guide2', '/how-to-use', '/quick-start'];
+	let urlsToIncludeSwitcher = ['/'];
 	let include = $derived(isIncluded(currentUrl, urlsToIncludeSwitcher));
 	// dropdown
 	let dropdown = uiHelpers();
