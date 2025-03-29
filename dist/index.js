@@ -14,5 +14,9 @@ export { default as IceCream } from './IceCream.svelte';
 export { default as Mug } from './Mug.svelte';
 export { default as Planet } from './Planet.svelte';
 export { default as SpeechBubble } from './SpeechBubble.svelte';
+export { default as Face } from './Face.svelte';
 export * from './utils/constants.ts';
 export * from './types.ts';
+export const getFaceScale = (size) => {
+    return size / 66;
+};

@@ -6,7 +6,8 @@ declare const __propDef: {
     };
     slots: {};
 };
-export type FaceProps = typeof __propDef.props;
+type FaceProps_ = typeof __propDef.props;
+export { FaceProps_ as FaceProps };
 export type FaceEvents = typeof __propDef.events;
 export type FaceSlots = typeof __propDef.slots;
 /**
@@ -14,6 +15,5 @@ export type FaceSlots = typeof __propDef.slots;
  * ## Props
  * @props:
  */
-export default class Face extends SvelteComponentTyped<FaceProps, FaceEvents, FaceSlots> {
+export default class Face extends SvelteComponentTyped<FaceProps_, FaceEvents, FaceSlots> {
 }
-export {};

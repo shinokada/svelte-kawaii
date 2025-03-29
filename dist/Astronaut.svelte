@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { KawaiiProps } from './types.ts';
-	import { getFaceScale } from './utils/getFaceScale.ts';
-	import Face from './Face.svelte';
+	import { type KawaiiProps, getFaceScale, Face } from './';
+	// import { getFaceScale } from './utils/getFaceScale';
+	// import Face from './Face.svelte';
 
 	let {
 		size = 240,

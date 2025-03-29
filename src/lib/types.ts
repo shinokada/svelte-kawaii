@@ -15,3 +15,10 @@ export type KawaiiFaceProps = {
 	uniqueId?: string;
 	transform?: string;
 };
+
+export type FaceProps = {
+	mood: "sad" | "shocked" | "happy" | "blissful" | "lovestruck" | "excited" | "ko";
+	transform: string;
+	uniqueId: string;
+}
+

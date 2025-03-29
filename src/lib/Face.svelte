@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { paths } from './utils/paths.ts';
+	import { paths } from './utils/paths';
+	import type { FaceProps } from '$lib'
 
-	type Mood = 'blissful' | 'happy' | 'sad' | 'shocked' | 'excited' | 'lovestruck' | 'ko';
-
-	let { mood = 'blissful' as Mood, uniqueId = crypto.randomUUID(), transform = '' } = $props();
+	let { mood = 'blissful', uniqueId = crypto.randomUUID(), transform = '' }: FaceProps = $props();
 </script>
 
 <g id="kawaii-face" {transform}>
