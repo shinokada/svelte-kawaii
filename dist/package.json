@@ -1,6 +1,6 @@
 {
   "name": "svelte-kawaii",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.",
   "license": "MIT",
   "homepage": "https://svelte-kawaii.codewithshin.com/",
@@ -11,9 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shinokada/svelte-kawaii"
+    "url": "git+https://github.com/shinokada/svelte-kawaii.git"
   },
   "bugs": "https://github.com/shinokada/svelte-kawaii/issues",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "keywords": [
     "svelte",
@@ -107,72 +117,72 @@
       "svelte": "./dist/index.js"
     },
     "./Astronaut.svelte": {
-      "types": "./dist/components/Astronaut.svelte.d.ts",
-      "svelte": "./dist/components/Astronaut.svelte"
+      "types": "./dist/Astronaut.svelte.d.ts",
+      "svelte": "./dist/Astronaut.svelte"
     },
     "./Backpack.svelte": {
-      "types": "./dist/components/Backpack.svelte.d.ts",
-      "svelte": "./dist/components/Backpack.svelte"
+      "types": "./dist/Backpack.svelte.d.ts",
+      "svelte": "./dist/Backpack.svelte"
     },
     "./Browser.svelte": {
-      "types": "./dist/components/Browser.svelte.d.ts",
-      "svelte": "./dist/components/Browser.svelte"
+      "types": "./dist/Browser.svelte.d.ts",
+      "svelte": "./dist/Browser.svelte"
     },
     "./Cat.svelte": {
-      "types": "./dist/components/Cat.svelte.d.ts",
-      "svelte": "./dist/components/Cat.svelte"
+      "types": "./dist/Cat.svelte.d.ts",
+      "svelte": "./dist/Cat.svelte"
     },
     "./Chocolate.svelte": {
-      "types": "./dist/components/Chocolate.svelte.d.ts",
-      "svelte": "./dist/components/Chocolate.svelte"
+      "types": "./dist/Chocolate.svelte.d.ts",
+      "svelte": "./dist/Chocolate.svelte"
     },
     "./CreditCard.svelte": {
-      "types": "./dist/components/CreditCard.svelte.d.ts",
-      "svelte": "./dist/components/CreditCard.svelte"
+      "types": "./dist/CreditCard.svelte.d.ts",
+      "svelte": "./dist/CreditCard.svelte"
     },
     "./Cyborg.svelte": {
-      "types": "./dist/components/Cyborg.svelte.d.ts",
-      "svelte": "./dist/components/Cyborg.svelte"
-    },
-    "./File.svelte": {
-      "types": "./dist/components/File.svelte.d.ts",
-      "svelte": "./dist/components/File.svelte"
-    },
-    "./Folder.svelte": {
-      "types": "./dist/components/Folder.svelte.d.ts",
-      "svelte": "./dist/components/Folder.svelte"
-    },
-    "./Ghost.svelte": {
-      "types": "./dist/components/Ghost.svelte.d.ts",
-      "svelte": "./dist/components/Ghost.svelte"
-    },
-    "./HumanCat.svelte": {
-      "types": "./dist/components/HumanCat.svelte.d.ts",
-      "svelte": "./dist/components/HumanCat.svelte"
-    },
-    "./HumanDinosaur.svelte": {
-      "types": "./dist/components/HumanDinosaur.svelte.d.ts",
-      "svelte": "./dist/components/HumanDinosaur.svelte"
-    },
-    "./IceCream.svelte": {
-      "types": "./dist/components/IceCream.svelte.d.ts",
-      "svelte": "./dist/components/IceCream.svelte"
-    },
-    "./Mug.svelte": {
-      "types": "./dist/components/Mug.svelte.d.ts",
-      "svelte": "./dist/components/Mug.svelte"
-    },
-    "./Planet.svelte": {
-      "types": "./dist/components/Planet.svelte.d.ts",
-      "svelte": "./dist/components/Planet.svelte"
-    },
-    "./SpeechBubble.svelte": {
-      "types": "./dist/components/SpeechBubble.svelte.d.ts",
-      "svelte": "./dist/components/SpeechBubble.svelte"
+      "types": "./dist/Cyborg.svelte.d.ts",
+      "svelte": "./dist/Cyborg.svelte"
     },
     "./Face.svelte": {
-      "types": "./dist/components/common/Face.svelte.d.ts",
-      "svelte": "./dist/components/common/Face.svelte"
+      "types": "./dist/Face.svelte.d.ts",
+      "svelte": "./dist/Face.svelte"
+    },
+    "./File.svelte": {
+      "types": "./dist/File.svelte.d.ts",
+      "svelte": "./dist/File.svelte"
+    },
+    "./Folder.svelte": {
+      "types": "./dist/Folder.svelte.d.ts",
+      "svelte": "./dist/Folder.svelte"
+    },
+    "./Ghost.svelte": {
+      "types": "./dist/Ghost.svelte.d.ts",
+      "svelte": "./dist/Ghost.svelte"
+    },
+    "./HumanCat.svelte": {
+      "types": "./dist/HumanCat.svelte.d.ts",
+      "svelte": "./dist/HumanCat.svelte"
+    },
+    "./HumanDinosaur.svelte": {
+      "types": "./dist/HumanDinosaur.svelte.d.ts",
+      "svelte": "./dist/HumanDinosaur.svelte"
+    },
+    "./IceCream.svelte": {
+      "types": "./dist/IceCream.svelte.d.ts",
+      "svelte": "./dist/IceCream.svelte"
+    },
+    "./Mug.svelte": {
+      "types": "./dist/Mug.svelte.d.ts",
+      "svelte": "./dist/Mug.svelte"
+    },
+    "./Planet.svelte": {
+      "types": "./dist/Planet.svelte.d.ts",
+      "svelte": "./dist/Planet.svelte"
+    },
+    "./SpeechBubble.svelte": {
+      "types": "./dist/SpeechBubble.svelte.d.ts",
+      "svelte": "./dist/SpeechBubble.svelte"
     },
     "./package.json": "./package.json"
   }

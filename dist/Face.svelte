@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { paths } from './paths.ts';
+	import { paths } from './utils/paths.ts';
 
 	type Mood = 'blissful' | 'happy' | 'sad' | 'shocked' | 'excited' | 'lovestruck' | 'ko';
 

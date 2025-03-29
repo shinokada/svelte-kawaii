@@ -1,5 +1,5 @@
 import type { SVGAttributes } from 'svelte/elements';
-import { MOODS } from '../constants/index.ts';
+import { MOODS } from './utils/constants.ts';
 export type KawaiiMood = (typeof MOODS)[number];
 export type KawaiiProps = SVGAttributes<SVGElement> & {
     size?: number | string;
