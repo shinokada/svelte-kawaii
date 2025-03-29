@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { paths } from './utils/paths';
-	import type { FaceProps } from '$lib';
+	export type FaceProps = {
+		mood: 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
+		transform: string;
+		uniqueId: string;
+	};
 
 	let { mood = 'blissful', uniqueId = crypto.randomUUID(), transform = '' }: FaceProps = $props();
 </script>

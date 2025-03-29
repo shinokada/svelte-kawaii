@@ -1,1 +1,1 @@
-import { MOODS } from './utils/constants';
+export {};

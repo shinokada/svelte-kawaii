@@ -1,7 +1,6 @@
 import type { SVGAttributes } from 'svelte/elements';
-import { MOODS } from './utils/constants';
 
-export type KawaiiMood = (typeof MOODS)[number];
+export type KawaiiMood = 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
 
 export type KawaiiProps = SVGAttributes<SVGElement> & {
 	size?: number | string;
@@ -14,10 +13,4 @@ export type KawaiiFaceProps = {
 	mood?: KawaiiMood;
 	uniqueId?: string;
 	transform?: string;
-};
-
-export type FaceProps = {
-	mood: 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
-	transform: string;
-	uniqueId: string;
 };
