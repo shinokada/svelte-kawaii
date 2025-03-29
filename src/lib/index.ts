@@ -22,4 +22,3 @@ export * from './types.ts';
 export const getFaceScale = (size: number) => {
 	return size / 66;
 };
-

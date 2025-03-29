@@ -1,5 +1,5 @@
 <script lang="ts">
-	import  { type KawaiiProps, getFaceScale, Face } from '$lib';
+	import { type KawaiiProps, getFaceScale, Face } from '$lib';
 
 	let {
 		size = 240,

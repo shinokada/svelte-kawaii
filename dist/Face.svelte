@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { paths } from './utils/paths';
-	import type { FaceProps } from './'
+	import type { FaceProps } from './';
 
 	let { mood = 'blissful', uniqueId = crypto.randomUUID(), transform = '' }: FaceProps = $props();
 </script>
@@ -94,5 +94,7 @@
 @component
 [Go to docs](https://svelte-kawaii.codewithshin.com/)
 ## Props
-@props: 
+@props: mood: any = 'blissful';
+@props:uniqueId: any = crypto.randomUUID();
+@props:transform: any = '';
 -->

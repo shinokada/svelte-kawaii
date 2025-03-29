@@ -13,7 +13,7 @@ export type KawaiiFaceProps = {
     transform?: string;
 };
 export type FaceProps = {
-    mood: "sad" | "shocked" | "happy" | "blissful" | "lovestruck" | "excited" | "ko";
+    mood: 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
     transform: string;
     uniqueId: string;
 };

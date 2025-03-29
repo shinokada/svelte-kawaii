@@ -13,7 +13,9 @@ export type FaceSlots = typeof __propDef.slots;
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
- * @props:
+ * @props: mood: any = 'blissful';
+ * @props:uniqueId: any = crypto.randomUUID();
+ * @props:transform: any = '';
  */
 export default class Face extends SvelteComponentTyped<FaceProps_, FaceEvents, FaceSlots> {
 }
