@@ -16,9 +16,9 @@ export { default as Planet } from './Planet.svelte';
 export { default as SpeechBubble } from './SpeechBubble.svelte';
 export { default as Face } from './Face.svelte';
 
-export * from './utils/constants.ts';
+export * from './utils/constants';
 
-export * from './types.ts';
+export * from './types';
 export const getFaceScale = (size: number) => {
 	return size / 66;
 };
