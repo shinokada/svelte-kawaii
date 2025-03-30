@@ -1,5 +1,17 @@
 # svelte-kawaii
 
+## 0.1.10
+
+### Patch Changes
+
+- fix: changeset fix
+
+## 0.1.9
+
+### Patch Changes
+
+- fix: package.json update
+
 ## 0.1.9
 
 ### Patch Changes

@@ -1,40 +1,40 @@
 {
 	"name": "svelte-kawaii",
-  "version": "0.1.8",
-  "description": "Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.",
-  "license": "MIT",
-  "homepage": "https://svelte-kawaii.codewithshin.com/",
-  "author": {
-    "name": "Shinichi Okada",
-    "email": "connect@codewithshin.com",
-    "url": "https://codewithshin.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shinokada/svelte-kawaii.git"
-  },
-  "bugs": "https://github.com/shinokada/svelte-kawaii/issues",
-  "keywords": [
-    "svelte",
-    "kawaii",
-    "illustrations",
-    "svg",
-    "adorable",
-    "components",
-    "ui",
-    "interface",
-    "cartoon",
-    "character",
-    "mascot",
-    "react-kawaii",
-    "design"
-  ],
-  "contributors": [
-    {
-      "name": "react-kawaii/tree/main",
-      "url": "https://github.com/elizabetdev/react-kawaii/tree/main"
-    }
-  ],
+	"version": "0.1.10",
+	"description": "Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.",
+	"license": "MIT",
+	"homepage": "https://svelte-kawaii.codewithshin.com/",
+	"author": {
+		"name": "Shinichi Okada",
+		"email": "connect@codewithshin.com",
+		"url": "https://codewithshin.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/shinokada/svelte-kawaii.git"
+	},
+	"bugs": "https://github.com/shinokada/svelte-kawaii/issues",
+	"keywords": [
+		"svelte",
+		"kawaii",
+		"illustrations",
+		"svg",
+		"adorable",
+		"components",
+		"ui",
+		"interface",
+		"cartoon",
+		"character",
+		"mascot",
+		"react-kawaii",
+		"design"
+	],
+	"contributors": [
+		{
+			"name": "react-kawaii/tree/main",
+			"url": "https://github.com/elizabetdev/react-kawaii/tree/main"
+		}
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
