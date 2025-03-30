@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type GhostProps = typeof __propDef.props;
-export type GhostEvents = typeof __propDef.events;
-export type GhostSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type GhostSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class Ghost extends SvelteComponentTyped<GhostProps, GhostEvents, GhostSlots> {
-}
-export {};
+declare const Ghost: import("svelte").Component<Props, {}, "">;
+type Ghost = ReturnType<typeof Ghost>;
+export default Ghost;

@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type IceCreamProps = typeof __propDef.props;
-export type IceCreamEvents = typeof __propDef.events;
-export type IceCreamSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type IceCreamSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class IceCream extends SvelteComponentTyped<IceCreamProps, IceCreamEvents, IceCreamSlots> {
-}
-export {};
+declare const IceCream: import("svelte").Component<Props, {}, "">;
+type IceCream = ReturnType<typeof IceCream>;
+export default IceCream;

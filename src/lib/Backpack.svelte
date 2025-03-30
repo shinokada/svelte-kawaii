@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { type KawaiiProps, getFaceScale, Face } from '$lib';
+	import type { KawaiiProps as Props } from './types';
+	import { getFaceScale } from './';
+	import Face from './Face.svelte';
 
 	let {
 		size = 240,
@@ -7,7 +9,7 @@
 		color = '#A6E191',
 		uniqueId = crypto.randomUUID(),
 		...restProps
-	}: KawaiiProps = $props();
+	}: Props = $props();
 
 	const figmaFaceScale = getFaceScale(50.73);
 	const figmaFaceXYPosition = '94.67 106.5';

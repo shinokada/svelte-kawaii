@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type FolderProps = typeof __propDef.props;
-export type FolderEvents = typeof __propDef.events;
-export type FolderSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type FolderSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class Folder extends SvelteComponentTyped<FolderProps, FolderEvents, FolderSlots> {
-}
-export {};
+declare const Folder: import("svelte").Component<Props, {}, "">;
+type Folder = ReturnType<typeof Folder>;
+export default Folder;

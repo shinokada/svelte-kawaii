@@ -1,15 +1,9 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
+type KawaiiMood = 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
+type KawaiiFaceProps = {
+    mood?: KawaiiMood;
+    uniqueId?: string;
+    transform?: string;
 };
-type FaceProps_ = typeof __propDef.props;
-export { FaceProps_ as FaceProps };
-export type FaceEvents = typeof __propDef.events;
-export type FaceSlots = typeof __propDef.slots;
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,5 +11,6 @@ export type FaceSlots = typeof __propDef.slots;
  * @props:uniqueId: any;
  * @props:transform: any = '';
  */
-export default class Face extends SvelteComponentTyped<FaceProps_, FaceEvents, FaceSlots> {
-}
+declare const Face: import("svelte").Component<KawaiiFaceProps, {}, "">;
+type Face = ReturnType<typeof Face>;
+export default Face;

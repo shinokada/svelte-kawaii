@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type FileProps = typeof __propDef.props;
-export type FileEvents = typeof __propDef.events;
-export type FileSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type FileSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class File extends SvelteComponentTyped<FileProps, FileEvents, FileSlots> {
-}
-export {};
+declare const File: import("svelte").Component<Props, {}, "">;
+type File = ReturnType<typeof File>;
+export default File;

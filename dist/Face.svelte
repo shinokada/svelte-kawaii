@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { paths } from './utils/paths';
-
-	type FaceProps = {
-		mood: 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
-		transform: string;
-		uniqueId: string;
+	type KawaiiMood = 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
+	type KawaiiFaceProps = {
+		mood?: KawaiiMood;
+		uniqueId?: string;
+		transform?: string;
 	};
 
-	let { mood = 'blissful', uniqueId, transform = '' }: FaceProps = $props();
+	let { mood = 'blissful', uniqueId, transform = '' }: KawaiiFaceProps = $props();
 </script>
 
-<g id="kawaii-face" {transform} aria-label={`Kawaii face with ${mood} mood`} role="img">
+<g id="kawaii-face" {transform} aria-label={`Kawaii face with ${mood} mood`}>
 	<defs>
 		<path d={paths.defs} id="kawaii-face__path-1" />
 	</defs>

@@ -1,5 +1,11 @@
 # svelte-kawaii
 
+## 0.1.9
+
+### Patch Changes
+
+- fix: import updates
+
 ## 0.1.8
 
 ### Patch Changes

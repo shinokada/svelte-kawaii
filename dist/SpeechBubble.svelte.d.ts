@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type SpeechBubbleProps = typeof __propDef.props;
-export type SpeechBubbleEvents = typeof __propDef.events;
-export type SpeechBubbleSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type SpeechBubbleSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class SpeechBubble extends SvelteComponentTyped<SpeechBubbleProps, SpeechBubbleEvents, SpeechBubbleSlots> {
-}
-export {};
+declare const SpeechBubble: import("svelte").Component<Props, {}, "">;
+type SpeechBubble = ReturnType<typeof SpeechBubble>;
+export default SpeechBubble;

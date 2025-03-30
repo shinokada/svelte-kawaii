@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type BrowserProps = typeof __propDef.props;
-export type BrowserEvents = typeof __propDef.events;
-export type BrowserSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type BrowserSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class Browser extends SvelteComponentTyped<BrowserProps, BrowserEvents, BrowserSlots> {
-}
-export {};
+declare const Browser: import("svelte").Component<Props, {}, "">;
+type Browser = ReturnType<typeof Browser>;
+export default Browser;

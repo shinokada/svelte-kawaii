@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type ChocolateProps = typeof __propDef.props;
-export type ChocolateEvents = typeof __propDef.events;
-export type ChocolateSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type ChocolateSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class Chocolate extends SvelteComponentTyped<ChocolateProps, ChocolateEvents, ChocolateSlots> {
-}
-export {};
+declare const Chocolate: import("svelte").Component<Props, {}, "">;
+type Chocolate = ReturnType<typeof Chocolate>;
+export default Chocolate;

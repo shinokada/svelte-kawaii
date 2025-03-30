@@ -3,7 +3,7 @@
 	import { sineIn } from 'svelte/easing';
 	import type { Component } from 'svelte';
 	import { page } from '$app/state';
-	import { newSidebarList } from './utils/helper.ts';
+	import { newSidebarList } from './utils/helper';
 	import {
 		Footer,
 		OnThisPage,

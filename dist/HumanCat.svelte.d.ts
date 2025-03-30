@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type HumanCatProps = typeof __propDef.props;
-export type HumanCatEvents = typeof __propDef.events;
-export type HumanCatSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type HumanCatSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class HumanCat extends SvelteComponentTyped<HumanCatProps, HumanCatEvents, HumanCatSlots> {
-}
-export {};
+declare const HumanCat: import("svelte").Component<Props, {}, "">;
+type HumanCat = ReturnType<typeof HumanCat>;
+export default HumanCat;

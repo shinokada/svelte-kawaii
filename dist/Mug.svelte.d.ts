@@ -1,14 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
-declare const __propDef: {
-    props: Record<string, never>;
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {};
-};
-export type MugProps = typeof __propDef.props;
-export type MugEvents = typeof __propDef.events;
-export type MugSlots = typeof __propDef.slots;
+import type { KawaiiProps as Props } from './types';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
@@ -17,6 +7,6 @@ export type MugSlots = typeof __propDef.slots;
  * @props:color: any = '#A6E191';
  * @props:uniqueId: any = crypto.randomUUID();
  */
-export default class Mug extends SvelteComponentTyped<MugProps, MugEvents, MugSlots> {
-}
-export {};
+declare const Mug: import("svelte").Component<Props, {}, "">;
+type Mug = ReturnType<typeof Mug>;
+export default Mug;
