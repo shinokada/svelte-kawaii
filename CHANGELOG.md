@@ -1,5 +1,11 @@
 # svelte-kawaii
 
+## 0.1.13
+
+### Patch Changes
+
+- fix: component docs
+
 ## 0.1.12
 
 ### Patch Changes

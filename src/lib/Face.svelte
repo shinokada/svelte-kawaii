@@ -99,9 +99,13 @@
 @component
 [Go to docs](https://svelte-kawaii.codewithshin.com/)
 ## Types
+@types: KawaiiMood = 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko'
 @type: size?: number | string;
 @type: color?: string;
 @type: mood?: KawaiiMood;
 @type: uniqueId?: string;
-let { mood = 'blissful', uniqueId, transform = '' }: KawaiiFaceProps = $props();
+## Props
+@props: mood = 'blissful'
+@props: uniqueId
+@props: transform = ''
 -->
