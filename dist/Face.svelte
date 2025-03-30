@@ -98,8 +98,12 @@
 <!--
 @component
 [Go to docs](https://svelte-kawaii.codewithshin.com/)
-## Props
-@props: mood: any = 'blissful';
-@props:uniqueId: any;
-@props:transform: any = '';
+## Types & Props
+type Props = SVGAttributes<SVGElement> & {
+	size?: number | string;
+	color?: string;
+	mood?: KawaiiMood;
+	uniqueId?: string;
+};
+let { mood = 'blissful', uniqueId, transform = '' }: KawaiiFaceProps = $props();
 -->

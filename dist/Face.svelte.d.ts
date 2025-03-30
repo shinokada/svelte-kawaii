@@ -6,10 +6,14 @@ type KawaiiFaceProps = {
 };
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
- * ## Props
- * @props: mood: any = 'blissful';
- * @props:uniqueId: any;
- * @props:transform: any = '';
+ * ## Types & Props
+ * type Props = SVGAttributes<SVGElement> & {
+ * size?: number | string;
+ * color?: string;
+ * mood?: KawaiiMood;
+ * uniqueId?: string;
+ * };
+ * let { mood = 'blissful', uniqueId, transform = '' }: KawaiiFaceProps = $props();
  */
 declare const Face: import("svelte").Component<KawaiiFaceProps, {}, "">;
 type Face = ReturnType<typeof Face>;

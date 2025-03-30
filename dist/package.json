@@ -1,6 +1,6 @@
 {
   "name": "svelte-kawaii",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.",
   "license": "MIT",
   "homepage": "https://svelte-kawaii.codewithshin.com/",
@@ -52,7 +52,7 @@
     "copy:packagejson": "svelte-lib-helpers package",
     "copy:ts": "svelte-lib-helpers ts",
     "gen:docs5FromType": "svelte-lib-helpers docs5FromType",
-    "lib-helpers": "pnpm format && pnpm gen:docs5FromType && pnpm  package && pnpm copy:packagejson",
+    "lib-helpers": "pnpm format && pnpm  package && pnpm copy:packagejson",
     "ch": "npx changeset",
     "cv": "npx changeset version",
     "cp": "npx changeset publish"
