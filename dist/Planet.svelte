@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { type KawaiiProps as Props, getFaceScale, Face } from './';
 
-
-
 	let {
 		size = 240,
 		mood = 'blissful',
