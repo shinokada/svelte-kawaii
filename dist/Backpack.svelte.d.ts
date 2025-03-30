@@ -1,4 +1,4 @@
-import type { KawaiiProps as Props } from './types';
+import { type KawaiiProps as Props } from './';
 /**
  * [Go to docs](https://svelte-kawaii.codewithshin.com/)
  * ## Props
