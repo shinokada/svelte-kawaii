@@ -1,8 +1,17 @@
 <script lang="ts">
-	import { Astronaut, Backpack, Browser } from '$lib';
+	import IllustPage from './utils/IllustPage.svelte';
+	const modules = import.meta.glob('$lib/components/*.svelte');
+	import * as icons from '$lib/components/';
+
+
 </script>
 
-<h1>Svelte Kawaii</h1>
-<Astronaut size={240} mood="happy" color="#ffb3ba" />
-<Backpack size={187} mood="shocked" color="#fccb7e" />
-<Browser size={216} mood="sad" color="#add2ff" />
+<IllustPage
+	minSize="180"
+	defaultSize="240"
+	maxSize="300"
+	step="10"
+	title="Svelte Kawaii"
+	{icons}
+	threeTabs={false}
+/>

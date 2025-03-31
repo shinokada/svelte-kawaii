@@ -3,11 +3,8 @@
 	import { sineIn } from 'svelte/easing';
 	import type { Component } from 'svelte';
 	import { page } from '$app/state';
-	import { newSidebarList } from './utils/helper';
 	import {
 		Footer,
-		OnThisPage,
-		extract,
 		removeHyphensAndCapitalize,
 		DotsHorizontalOutline,
 		GithubSolid,
@@ -24,13 +21,7 @@
 		Darkmode,
 		Dropdown,
 		DropdownUl,
-		DropdownLi,
-		Sidebar,
-		SidebarGroup,
-		SidebarDropdownWrapper,
-		SidebarItem,
-		CloseButton,
-		SidebarBrand
+		DropdownLi
 	} from 'svelte-5-ui-lib';
 	import { RunesMetaTags, deepMerge } from 'runes-meta-tags';
 	import { Runatics } from 'runatics';
@@ -54,23 +45,18 @@
 			? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags)
 			: data.layoutMetaTags
 	);
-	// sidebar
-	const sidebarUi = uiHelpers();
-	let isOpen = $state(false);
-	const closeSidebar = sidebarUi.close;
 
 	let currentUrl = $state(page.url.pathname);
-	const hasPath = (key: string) => currentUrl.includes(key);
 
 	const lis: LiType[] = [
 		{ name: 'Home', href: '/' },
-		{ name: 'About', href: '/about' }
+		{ name: 'About', href: '/about' },
 	];
 	const brand = {
 		name: 'codewithshin.com',
 		href: 'https://codewithshin.com'
 	};
-	const urlsToIncludeSwitcherAndSidebar = ['/guide/', '/about', '/how-to-use', '/quick-start'];
+	
 	/*eslint no-undef: "off"*/
 	const siteName = removeHyphensAndCapitalize(__NAME__);
 	const githubUrl = `https://github.com/shinokada/${__NAME__}`;
@@ -98,7 +84,7 @@
 			return url.startsWith(allowedUrl);
 		});
 	}
-	let urlsToIncludeSwitcher = ['/'];
+	let urlsToIncludeSwitcher = ['/', '/about'];
 	let include = $derived(isIncluded(currentUrl, urlsToIncludeSwitcher));
 	// dropdown
 	let dropdown = uiHelpers();
@@ -117,7 +103,6 @@
 		metaTags = page.data.pageMetaTags
 			? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags)
 			: data.layoutMetaTags;
-		isOpen = sidebarUi.isOpen;
 	});
 </script>
 
@@ -136,31 +121,6 @@
 <header class={headerCls}>
 	<Navbar {navClass} {toggleNav} {closeNav} {navStatus} breakPoint="lg" fluid div2Class={divClass}>
 		{#snippet brand()}
-			{#if urlsToIncludeSwitcherAndSidebar.some((path) => currentUrl.startsWith(path))}
-				<button
-					onclick={sidebarUi.toggle}
-					type="button"
-					class="z-100 mt-1 mr-4 lg:hidden"
-					aria-controls="navbar-default"
-				>
-					<span class="sr-only">Toggle sidebar menu</span>
-					<svg
-						class="h-5 w-5"
-						aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 17 14"
-					>
-						<path
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M1 1h15M1 7h15M1 13h15"
-						/>
-					</svg>
-				</button>
-			{/if}
 			{#if siteName}
 				<NavBrand
 					{siteName}
@@ -216,63 +176,6 @@
 </header>
 
 <div class="lg:flex">
-	{#if urlsToIncludeSwitcherAndSidebar.some((path) => currentUrl.startsWith(path))}
-		<Sidebar
-			{activeUrl}
-			{isOpen}
-			{closeSidebar}
-			breakpoint="lg"
-			activeClass="flex items-center p-1 text-base font-normal text-white dark:hover:text-white hover:text-gray-900 bg-primary-700 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
-			nonActiveClass="p-1 hover:bg-gray-200"
-			divClass="dark_bg_theme bg-gray-50"
-			class="dark_bg_theme h-screen border-r border-gray-50 lg:top-[58px] dark:border-gray-700"
-		>
-			<CloseButton
-				onclick={closeSidebar}
-				color="gray"
-				class="absolute top-3 right-1 p-2 lg:hidden"
-			/>
-			<SidebarGroup>
-				<SidebarBrand>
-					<span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white"
-						>Runes Webkit</span
-					>
-				</SidebarBrand>
-				{#each newSidebarList as { name, Icon, children, href }}
-					{#if children}
-						<SidebarDropdownWrapper
-							label={name}
-							isOpen={hasPath('components')}
-							svgClass="me-4"
-							btnClass="p-1"
-						>
-							{#snippet iconSlot()}
-								<Icon />
-							{/snippet}
-							{#each children as { name, Icon, href }}
-								<SidebarItem label={name} onclick={closeSidebar} {href} aClass="ml-4">
-									{#snippet iconSlot()}
-										<Icon />
-									{/snippet}
-								</SidebarItem>
-							{/each}
-						</SidebarDropdownWrapper>
-					{:else}
-						<SidebarItem label={name} onclick={closeSidebar} {href}>
-							{#snippet iconSlot()}
-								<Icon />
-							{/snippet}
-						</SidebarItem>
-					{/if}
-				{/each}
-			</SidebarGroup>
-		</Sidebar>
-	{/if}
-	{#if urlsToIncludeSwitcherAndSidebar.some((path) => currentUrl.startsWith(path))}
-		<div class="relative">
-			<OnThisPage {extract} headingSelector="#mainContent > :where(h2, h3)" />
-		</div>
-	{/if}
 	{@render children()}
 </div>
 <Footer {brand} {lis} />
