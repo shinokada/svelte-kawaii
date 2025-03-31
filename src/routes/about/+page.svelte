@@ -92,10 +92,10 @@
   };
 
   const modules = import.meta.glob('./md/*.md', {
-		query: '?raw',
-		import: 'default',
-		eager: true
-	});
+    query: '?raw',
+    import: 'default',
+    eager: true
+  });
 </script>
 
 <div class="relative mx-auto mt-8 h-full max-w-7xl overflow-y-auto px-8 pb-20">
@@ -116,23 +116,15 @@
   <h1 class="my-8 flex justify-center">Svelte Kawaii</h1>
 
   <H2>Installation</H2>
-	<HighlightCompo
-		class="max-w-7xl"
-		codeLang="ts"
-		code={modules['./md/installation.md'] as string}
-	/>
+  <HighlightCompo
+    class="max-w-7xl"
+    codeLang="ts"
+    code={modules['./md/installation.md'] as string}
+  />
   <H2>Props</H2>
-  <HighlightCompo
-		class="max-w-7xl"
-		codeLang="ts"
-		code={modules['./md/props.md'] as string}
-	/>
+  <HighlightCompo class="max-w-7xl" codeLang="ts" code={modules['./md/props.md'] as string} />
   <H2>Types</H2>
-  <HighlightCompo
-		class="max-w-7xl mb-8"
-		codeLang="ts"
-		code={modules['./md/types.md'] as string}
-	/>
+  <HighlightCompo class="mb-8 max-w-7xl" codeLang="ts" code={modules['./md/types.md'] as string} />
 
   <H2>Features</H2>
   <HomeCards cards={filteredCards} />

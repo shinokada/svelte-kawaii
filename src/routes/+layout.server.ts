@@ -9,7 +9,8 @@ export const load = ({ url }) => {
     'Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.';
   const description = metaDescription(url.pathname, basicDesc);
   const image = metaImg(url.pathname, __NAME__);
-  const keywords = 'svelte,kawaii,illustrations,svg,adorable,components,ui,interface,cartoon,charactermascot,react-kawaii,design';
+  const keywords =
+    'svelte,kawaii,illustrations,svg,adorable,components,ui,interface,cartoon,charactermascot,react-kawaii,design';
   const layoutMetaTags: MetaProps = {
     title,
     description,
