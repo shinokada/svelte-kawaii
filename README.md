@@ -6,7 +6,7 @@
 Svelte Kawaii is a Svelte port of [React Kawaii](https://react-kawaii.vercel.app/), offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shinokada/svelte-kawaii/refs/heads/main/static/images/svelte-kawaii.png" width="500" alt="Svelte Kawaii">
+  <img src="https://raw.githubusercontent.com/shinokada/svelte-kawaii/refs/heads/main/static/images/svelte-kawaii-2.png" width="500" alt="Svelte Kawaii">
 </p>
 
 ## Installation
