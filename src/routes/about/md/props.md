@@ -1,0 +1,8 @@
+- size = 240,
+- mood = 'blissful',
+- color = '#A6E191',
+- uniqueId = crypto.randomUUID(),
+- ariaLabel = 'astronaut',
+- title,
+- desc,
+- ...restProps

@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
 
-const title = 'Runes Webkit Starter';
+const title = 'Svelte Kawaii';
 const description =
-  'A collection of reusable Svelte components for building user interfaces for Runes';
-const keywords = 'svelte, runes, webkit, ui, components';
-const imgUrl = 'https://open-graph-vercel.vercel.app/api/runes-webkit-starter';
+  'Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.';
+const keywords = 'svelte,kawaii,illustrations,svg,adorable,components,ui,interface,cartoon,charactermascot,react-kawaii,design';
+const imgUrl = 'https://open-graph-vercel.vercel.app/api/svelte-kawaii';
 
 test.beforeEach(async ({ page }) => {
   console.log(`Running ${test.info().title}`);

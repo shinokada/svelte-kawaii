@@ -6,11 +6,10 @@ export const load = ({ url }) => {
   const siteName = metaTitle('/', __NAME__);
   const title = metaTitle(url.pathname, __NAME__);
   const basicDesc =
-    'A collection of reusable Svelte components for building user interfaces for Runes';
+    'Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.';
   const description = metaDescription(url.pathname, basicDesc);
   const image = metaImg(url.pathname, __NAME__);
-  const keywords = 'svelte, runes, webkit, ui, components';
-
+  const keywords = 'svelte,kawaii,illustrations,svg,adorable,components,ui,interface,cartoon,charactermascot,react-kawaii,design';
   const layoutMetaTags: MetaProps = {
     title,
     description,

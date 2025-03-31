@@ -11,8 +11,9 @@
     Accessibility,
     TruckFastSolid,
     Visualstudiocode,
-    MoonSolid,
-    info
+    info,
+    H2,
+    HighlightCompo
   } from 'runes-webkit';
 
   const brand = {
@@ -89,6 +90,12 @@
     viteVersion: __VITE_VERSION__,
     tailwindcssVersion: __TAILWINDCSS_VERSION__
   };
+
+  const modules = import.meta.glob('./md/*.md', {
+		query: '?raw',
+		import: 'default',
+		eager: true
+	});
 </script>
 
 <div class="relative mx-auto mt-8 h-full max-w-7xl overflow-y-auto px-8 pb-20">
@@ -108,6 +115,26 @@
 
   <h1 class="my-8 flex justify-center">Svelte Kawaii</h1>
 
+  <H2>Installation</H2>
+	<HighlightCompo
+		class="max-w-7xl"
+		codeLang="ts"
+		code={modules['./md/installation.md'] as string}
+	/>
+  <H2>Props</H2>
+  <HighlightCompo
+		class="max-w-7xl"
+		codeLang="ts"
+		code={modules['./md/props.md'] as string}
+	/>
+  <H2>Types</H2>
+  <HighlightCompo
+		class="max-w-7xl mb-8"
+		codeLang="ts"
+		code={modules['./md/types.md'] as string}
+	/>
+
+  <H2>Features</H2>
   <HomeCards cards={filteredCards} />
   <h2 class="my-8 flex justify-center">Info</h2>
   <HomeCards cards={newInfo} />
