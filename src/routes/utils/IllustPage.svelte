@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { Tabs, Label, TabItem, Select } from 'svelte-5-ui-lib';
-  import { random_hex_color_code, random_tailwind_color } from 'runes-webkit';
+  import { Select } from 'svelte-5-ui-lib';
   import type { Component, Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import { Copy } from 'runes-webkit';
-  import { Modal, Button, uiHelpers } from 'svelte-5-ui-lib';
+  import { Modal, uiHelpers } from 'svelte-5-ui-lib';
   import DynamicCodeBlockHighlight from './DynamicCodeBlockHighlight.svelte';
   import { isGeneratedCodeOverflow } from './helper';
 
@@ -104,7 +102,7 @@
 
       if (defaultSize !== '240') props.push(` size="${defaultSize}"`);
       if (selectedColor !== '#A6E191') props.push(` color="${selectedColor}"`);
-      if (selectedMood !== 'happy') props.push(` class="${selectedMood}"`);
+      if (selectedMood !== 'happy') props.push(` mood="${selectedMood}"`);
 
       const propsString =
         props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
@@ -125,7 +123,7 @@
     kawaiiModal.toggle();
     selectedIllust = name;
   }
-  
+
   $effect(() => {
     builderExpand = builder.isOpen;
   });
