@@ -124,8 +124,8 @@
   const updateIllust = (name: string)=> {
     kawaiiModal.toggle();
     selectedIllust = name;
-    console.log('name', name)
   }
+  
   $effect(() => {
     builderExpand = builder.isOpen;
   });
