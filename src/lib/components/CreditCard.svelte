@@ -6,11 +6,16 @@
 		mood = 'blissful',
 		color = '#A6E191',
 		uniqueId = crypto.randomUUID(),
+		ariaLabel = 'credit card',
+		title,
+		desc,
 		...restProps
 	}: Props = $props();
 
 	const figmaFaceScale = getFaceScale(54.33);
 	const figmaFaceXYPosition = '93.33 121.1';
+	let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+	const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
 <svg
@@ -19,8 +24,15 @@
 	height={size}
 	viewBox="0 0 240 240"
 	fill="none"
+	aria-describedby={hasDescription ? ariaDescribedby : undefined}
 	{...restProps}
 >
+	{#if title?.id && title.title}
+		<title id={title.id}>{title.title}</title>
+	{/if}
+	{#if desc?.id && desc.desc}
+		<desc id={desc.id}>{desc.desc}</desc>
+	{/if}
 	<path
 		fill={color}
 		d="M192.959 178.722H48.041c-4.994 0-9.041-4.036-9.041-9.017V70.017C39 65.037 43.047 61 48.04 61h144.92c4.994 0 9.041 4.036 9.041 9.017v99.688c0 4.981-4.047 9.017-9.041 9.017"

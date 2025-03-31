@@ -6,11 +6,16 @@
 		mood = 'blissful',
 		color = '#A6E191',
 		uniqueId = crypto.randomUUID(),
+		ariaLabel = 'speech bubble',
+		title,
+		desc,
 		...restProps
 	}: Props = $props();
 
 	const figmaFaceScale = getFaceScale(56.77);
 	const figmaFaceXYPosition = '91.61 108.57';
+	let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+	const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
 <svg
@@ -19,8 +24,15 @@
 	height={size}
 	viewBox="0 0 240 240"
 	fill="none"
+	aria-describedby={hasDescription ? ariaDescribedby : undefined}
 	{...restProps}
 >
+	{#if title?.id && title.title}
+		<title id={title.id}>{title.title}</title>
+	{/if}
+	{#if desc?.id && desc.desc}
+		<desc id={desc.id}>{desc.desc}</desc>
+	{/if}
 	<path
 		fill={color}
 		d="M199.986 85.631c-.002-9.147-8.202-16.633-18.227-16.631l-123.536.004C48.2 69.004 40 76.49 40 85.637v67.402l.044-.007c.323 2.659 2.835 16.71 19.816 16.71h30.48l-.084 18.618s.069 1.555.417 1.998c.348.444 1.225 1.523 3.203 1.623 1.978.1 2.01-.228 2.36-.267.35-.038 5.519-3.611 5.519-3.611l25.756-18.361s51.382.524 54.821 0c6.621-1.009 17.654-3.025 17.654-17.142V85.632Z"

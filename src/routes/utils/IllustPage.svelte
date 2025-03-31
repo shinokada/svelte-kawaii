@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Tabs, Label, TabItem, Select } from 'svelte-5-ui-lib';
   import { random_hex_color_code, random_tailwind_color } from 'runes-webkit';
-  import type { Component } from 'svelte';
+  import type { Component, Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { Copy } from 'runes-webkit';
   import { Modal, Button, uiHelpers } from 'svelte-5-ui-lib';
@@ -17,7 +17,8 @@
 
   interface Props {
     icons: Record<string, Component>;
-    title: string;
+    header?: Snippet;
+    title?: string;
     defaultSize?: string;
     sizeByTailwind?: boolean;
     minSize?: string;
@@ -44,6 +45,7 @@
   }
   let {
     icons,
+    header,
     wrapperClass = 'mx-auto max-w-7xl px-8',
     div1Class = 'relative overflow-x-auto',
     div2Class,
@@ -126,8 +128,10 @@
 
 <div class="w-full pb-20">
   <div class={wrapperClass}>
-    <h1>{title}</h1>
-
+    <h1 class="text-center">{title}</h1>
+    {#if header}
+    {@render header()}
+    {/if}
     <div class={div1Class}>
       <div class={twMerge(classDiv2, div2Class)}>
         <div class="mx-auto place-items-center pt-2">

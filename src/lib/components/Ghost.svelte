@@ -6,11 +6,16 @@
 		mood = 'blissful',
 		color = '#A6E191',
 		uniqueId = crypto.randomUUID(),
+		ariaLabel = 'ghost',
+		title,
+		desc,
 		...restProps
 	}: Props = $props();
 
 	const figmaFaceScale = getFaceScale(62.06);
 	const figmaFaceXYPosition = '89.09 99.3';
+	let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+	const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
 <svg
@@ -19,8 +24,15 @@
 	height={size}
 	viewBox="0 0 240 240"
 	fill="none"
+	aria-describedby={hasDescription ? ariaDescribedby : undefined}
 	{...restProps}
 >
+	{#if title?.id && title.title}
+		<title id={title.id}>{title.title}</title>
+	{/if}
+	{#if desc?.id && desc.desc}
+		<desc id={desc.id}>{desc.desc}</desc>
+	{/if}
 	<path
 		fill={color}
 		fill-rule="evenodd"
