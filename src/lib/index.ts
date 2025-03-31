@@ -1,4 +1,4 @@
-export * from './components'
+export * from './components';
 export { default as Face } from './Face.svelte';
 
 export * from './utils/constants';

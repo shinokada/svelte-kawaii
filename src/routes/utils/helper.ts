@@ -30,7 +30,6 @@ export const newSidebarList: ListType[] = [
 	...extra
 ];
 
-
 export function excludeIconsByKeyword(icons: { [key: string]: any }, keyword: string) {
 	const filteredIcons: { [key: string]: any } = {};
 	for (const key in icons) {

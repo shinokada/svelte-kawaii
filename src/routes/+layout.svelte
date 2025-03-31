@@ -47,7 +47,7 @@
 		Icon?: Component;
 	};
 	let { children, data } = $props();
-	const analyticsId = data.ANALYTICS_ID;
+	const analyticsId = data.ANALYTICS_ID_SVELTE_LIB;
 	// metaTags
 	let metaTags = $state(
 		page.data.pageMetaTags

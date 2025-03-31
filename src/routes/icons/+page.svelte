@@ -1,7 +1,7 @@
 <script lang="ts">
 	import IllustPage from '../utils/IllustPage.svelte';
-	const modules = import.meta.glob('$lib/components/*.svelte')
-	import * as icons from '$lib/components/'
+	const modules = import.meta.glob('$lib/components/*.svelte');
+	import * as icons from '$lib/components/';
 
 	let searchTerm = $state('');
 	let filteredEntries = $derived(
@@ -18,6 +18,6 @@
 	maxSize="200"
 	step="10"
 	title="Kawaii Illustrations"
-	icons={icons}
+	{icons}
 	threeTabs={false}
 />

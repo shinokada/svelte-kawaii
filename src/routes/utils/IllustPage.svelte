@@ -78,11 +78,19 @@
 	);
 
 	// select mood
-	const moods = [{value:'sad', name:'Sad'}, {value:'shocked', name: 'Shocked'},{value:'happy', name:'Happy'}, {value: 'blissful',name:'Blissful'}, {value:'lovestruck', name:'Lovstruck'},{value:'excited',name:'Excited'}, {value:'ko', name: 'Ko'}];
+	const moods = [
+		{ value: 'sad', name: 'Sad' },
+		{ value: 'shocked', name: 'Shocked' },
+		{ value: 'happy', name: 'Happy' },
+		{ value: 'blissful', name: 'Blissful' },
+		{ value: 'lovestruck', name: 'Lovstruck' },
+		{ value: 'excited', name: 'Excited' },
+		{ value: 'ko', name: 'Ko' }
+	];
 	let selectedMood = $state('happy');
 
 	// color
-	let selectedColor = $state('#A6E191')
+	let selectedColor = $state('#A6E191');
 
 	// $inspect('filteredEntries', filteredEntries);
 </script>
@@ -90,47 +98,68 @@
 <div class="w-full pb-20">
 	<div class={wrapperClass}>
 		<h1>{title}</h1>
-		
+
 		<div class={div1Class}>
 			<div class={twMerge(classDiv2, div2Class)}>
-				<div class="place-items-center pt-2 mx-auto">
-					<input type="color" class="w-[100px] sm:w-[250px] " id="color-input" name="color-input" bind:value={selectedColor} />
-				</div>
-				<div class="place-items-center mx-auto">
-				<Select
-					id="select-mood"
-					items={moods}
-					bind:value={selectedMood}
-					class="mb-2 inline sm:w-[250px] w-[100px]"
-				/>
-				</div>
-				<div class="place-items-center mx-auto">
+				<div class="mx-auto place-items-center pt-2">
 					<input
-					id="size-input"
-					type="range"
-					min={minSize}
-					max={maxSize}
-					bind:value={defaultSize}
-					{step}
-					class={twMerge(classRange, rangeClass)}
+						type="color"
+						class="w-[100px] sm:w-[250px]"
+						id="color-input"
+						name="color-input"
+						bind:value={selectedColor}
 					/>
-					
+				</div>
+				<div class="mx-auto place-items-center">
+					<Select
+						id="select-mood"
+						items={moods}
+						bind:value={selectedMood}
+						class="mb-2 inline w-[100px] sm:w-[250px]"
+					/>
+				</div>
+				<div class="mx-auto place-items-center">
+					<input
+						id="size-input"
+						type="range"
+						min={minSize}
+						max={maxSize}
+						bind:value={defaultSize}
+						{step}
+						class={twMerge(classRange, rangeClass)}
+					/>
 				</div>
 			</div>
-			
+
 			<div class={twMerge(' py-8 text-gray-500 dark:text-gray-400', className)}>
 				<div class={twMerge(classDiv3, div3Class)}>
 					{#each filteredEntries as [name, Component] (name)}
 						{#if name !== 'Icon'}
 							<div class={div4Class}>
 								<button onclick={kawaiiModal.toggle} aria-label="modal-button">
-								<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></svg>
-							</button>
-								<Component height={defaultSize} color={selectedColor} mood={selectedMood} {...restProps}></Component>
+									<svg
+										stroke="currentColor"
+										fill="none"
+										stroke-width="2"
+										viewBox="0 0 24 24"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										height="24"
+										width="24"
+										xmlns="http://www.w3.org/2000/svg"
+										><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+											d="M14 4l-4 16"
+										></path></svg
+									>
+								</button>
+								<Component
+									height={defaultSize}
+									color={selectedColor}
+									mood={selectedMood}
+									{...restProps}
+								></Component>
 								<Copy iconName={name} btnClass="m-4">{name}</Copy>
-								<Modal title={name} {modalStatus} {closeModal}>
-									Modal content
-								</Modal>
+								<Modal title={name} {modalStatus} {closeModal}>Modal content</Modal>
 							</div>
 						{/if}
 					{/each}
