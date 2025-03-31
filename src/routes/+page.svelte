@@ -13,7 +13,7 @@
   {icons}
   threeTabs={false}
 >
-  {#snippet header()}
+  {#snippet header()}  
     <P class="mx-auto mb-8 max-w-2xl text-center">
       Svelte Kawaii is a Svelte port of <A href="https://react-kawaii.vercel.app/">React Kawaii</A>,
       offering cute SVG illustrations to add adorable characters to your Svelte applications. A
