@@ -10,22 +10,48 @@ pnpm i -D svelte-kawaii
 
 ## Props
 
+```md
 - size = 240,
 - mood = 'blissful',
 - color = '#A6E191',
-- uniqueId = crypto.randomUUID()
+- uniqueId = crypto.randomUUID(),
+- ariaLabel = 'astronaut',
+- title,
+- desc,
+- ...restProps
+```
 
 ## Types
 
-- KawaiiMood = 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
-- size?: number | string;
-- color?: string;
-- mood?: KawaiiMood;
-- uniqueId?: string;
+```ts
+import type { SVGAttributes } from 'svelte/elements';
+
+export type TitleType = {
+  id?: string;
+  title?: string;
+};
+
+export type DescType = {
+  id?: string;
+  desc?: string;
+};
+
+export type KawaiiMood = 'sad' | 'shocked' | 'happy' | 'blissful' | 'lovestruck' | 'excited' | 'ko';
+
+export type KawaiiProps = SVGAttributes<SVGElement> & {
+  size?: number | string;
+  color?: string;
+  mood?: KawaiiMood;
+  uniqueId?: string;
+  ariaLabel?: string;
+  title?: TitleType;
+  desc?: DescType;
+};
+```
 
 ## Usage
 
-```html
+```svelte
 <script lang="ts">
   import { Astronaut } from 'svelte-kawaii';
 </script>
