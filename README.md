@@ -27,7 +27,7 @@ pnpm i -D svelte-kawaii
 
 ```html
 <script lang="ts">
-	import { Astronaut } from 'svelte-kawaii';
+  import { Astronaut } from 'svelte-kawaii';
 </script>
 
 <Astronaut size="{240}" mood="happy" color="#ffb3ba" />

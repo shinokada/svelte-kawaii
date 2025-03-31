@@ -1,5 +1,17 @@
 # svelte-kawaii
 
+## 0.3.1
+
+### Patch Changes
+
+- fix: republish
+
+## 0.3.0
+
+### Minor Changes
+
+- feat: a11y
+
 ## 0.2.0
 
 ### Minor Changes

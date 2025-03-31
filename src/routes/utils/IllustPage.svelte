@@ -92,7 +92,7 @@
     { value: 'ko', name: 'Ko' }
   ];
   let selectedMood = $state('happy');
-  let componentName = $derived(selectedMood.charAt(0).toUpperCase() + selectedMood.slice(1))
+  let componentName = $derived(selectedMood.charAt(0).toUpperCase() + selectedMood.slice(1));
   // color
   let selectedColor = $state('#A6E191');
 
@@ -100,7 +100,7 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      
+
       if (defaultSize !== '240') props.push(` size="${defaultSize}"`);
       if (selectedColor !== '#A6E191') props.push(` color="${selectedColor}"`);
       if (selectedMood !== 'happy') props.push(` class="${selectedMood}"`);
@@ -108,29 +108,29 @@
       const propsString =
         props.length > 0 ? props.map((prop) => `\n  ${prop}`).join('') + '\n' : '';
 
-        return `import { ${componentName} } from "svelte-kawaii";
-<${componentName} ${propsString}/>`;      
+      return `import { ${componentName} } from "svelte-kawaii";
+<${componentName} ${propsString}/>`;
     })()
   );
 
   // for interactive builder
-	let builder = uiHelpers();
-	let builderExpand = $state(false);
-	let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
-	const handleBuilderExpandClick = () => {
-		builderExpand = !builderExpand;
-	};
+  let builder = uiHelpers();
+  let builderExpand = $state(false);
+  let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
+  const handleBuilderExpandClick = () => {
+    builderExpand = !builderExpand;
+  };
 
-	$effect(() => {
-		builderExpand = builder.isOpen;
-	});
+  $effect(() => {
+    builderExpand = builder.isOpen;
+  });
 </script>
 
 <div class="w-full pb-20">
   <div class={wrapperClass}>
     <h1 class="text-center">{title}</h1>
     {#if header}
-    {@render header()}
+      {@render header()}
     {/if}
     <div class={div1Class}>
       <div class={twMerge(classDiv2, div2Class)}>
@@ -164,7 +164,7 @@
         </div>
       </div>
       <Modal {modalStatus} {closeModal}>
-<h3 class="font-bold">{componentName}</h3>
+        <h3 class="font-bold">{componentName}</h3>
         <DynamicCodeBlockHighlight
           handleExpandClick={handleBuilderExpandClick}
           expand={builderExpand}
@@ -176,35 +176,37 @@
         <div class={twMerge(classDiv3, div3Class)}>
           {#each filteredEntries as [name, Component] (name)}
             {#if name !== 'Icon'}
-            <button 
-            class="group relative w-full flex flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-100 p-4 dark:border-gray-800 dark:bg-gray-800 hover:scale-105"
-            onclick={kawaiiModal.toggle} aria-label="modal-button">
-                  <svg
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    height="24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="absolute right-2 top-2 hidden group-hover:block" 
-                    ><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
-                      d="M14 4l-4 16"
-                    ></path></svg
-                  >
+              <button
+                class="group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-100 p-4 hover:scale-105 dark:border-gray-800 dark:bg-gray-800"
+                onclick={kawaiiModal.toggle}
+                aria-label="modal-button"
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute top-2 right-2 hidden group-hover:block"
+                  ><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+                    d="M14 4l-4 16"
+                  ></path></svg
+                >
                 <Component
                   size={defaultSize}
                   color={selectedColor}
                   mood={selectedMood}
                   {...restProps}
                 ></Component>
-               
-          <span class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-            {name}
-          </span>
-            </button>
+
+                <span class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {name}
+                </span>
+              </button>
             {/if}
           {/each}
         </div>

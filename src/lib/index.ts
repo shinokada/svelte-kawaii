@@ -6,5 +6,5 @@ export * from './utils/constants';
 export type { KawaiiMood, KawaiiProps, KawaiiFaceProps } from './types';
 
 export const getFaceScale = (size: number) => {
-	return size / 66;
+  return size / 66;
 };
