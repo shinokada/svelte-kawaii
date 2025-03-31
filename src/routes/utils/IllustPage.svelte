@@ -90,7 +90,7 @@
     { value: 'ko', name: 'Ko' }
   ];
   let selectedMood = $state('happy');
-  let selectedIllust = $state('happy')
+  let selectedIllust = $state('happy');
   let componentName = $derived(selectedIllust.charAt(0).toUpperCase() + selectedIllust.slice(1));
   // color
   let selectedColor = $state('#A6E191');
@@ -119,10 +119,10 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  const updateIllust = (name: string)=> {
+  const updateIllust = (name: string) => {
     kawaiiModal.toggle();
     selectedIllust = name;
-  }
+  };
 
   $effect(() => {
     builderExpand = builder.isOpen;
@@ -181,7 +181,7 @@
             {#if name !== 'Icon'}
               <button
                 class="group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-100 p-4 hover:scale-105 dark:border-gray-800 dark:bg-gray-800"
-                onclick={()=>updateIllust(name)}
+                onclick={() => updateIllust(name)}
                 aria-label="modal-button"
               >
                 <svg

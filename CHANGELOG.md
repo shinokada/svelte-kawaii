@@ -1,5 +1,11 @@
 # svelte-kawaii
 
+## 0.3.3
+
+### Patch Changes
+
+- docs: README update
+
 ## 0.3.2
 
 ### Patch Changes
