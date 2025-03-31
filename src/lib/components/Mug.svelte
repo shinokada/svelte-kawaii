@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type KawaiiProps as Props, getFaceScale, Face } from './';
+	import { type KawaiiProps as Props, getFaceScale, Face } from '..';
 
 	let {
 		size = 240,
@@ -9,8 +9,8 @@
 		...restProps
 	}: Props = $props();
 
-	const figmaFaceScale = getFaceScale(52);
-	const figmaFaceXYPosition = '94 123';
+	const figmaFaceScale = getFaceScale(53.95);
+	const figmaFaceXYPosition = '93.03 107.33';
 </script>
 
 <svg
@@ -24,22 +24,15 @@
 	<path
 		fill={color}
 		fill-rule="evenodd"
-		d="M85.599 51C78.64 51 73 56.64 73 63.599v113.1c0 6.958 5.641 12.599 12.599 12.599h68.81c6.957 0 12.598-5.641 12.598-12.599V83.151c0-.413-.164-.809-.456-1.1l-30.594-30.595"
+		d="M66.953 91.194H49.379C41.45 91.194 35 97.314 35 104.839c0 17.795 14.127 32.491 32.29 34.588C69.498 154.968 83.53 167 100.503 167h41.538c18.501 0 33.55-14.283 33.55-31.839V77.548c0-2.512-2.146-4.548-4.793-4.548H71.746c-2.646 0-4.793 2.036-4.793 4.548v13.646Zm-.713 9.096v29.896c-12.694-2.157-22.367-12.689-22.367-25.347 0-2.508 2.15-4.549 4.793-4.549H66.24Z"
 		clip-rule="evenodd"
 	/>
 	<path
 		fill="#000"
 		fill-rule="evenodd"
-		d="M135.501 51v20.465c0 6.098 4.943 11.04 11.041 11.04h20.464L135.501 51"
+		d="M121.643 73h-.086v94h.086V73Zm42.338 0c2.301 0 4.168 2.036 4.168 4.548v57.613c0 17.556-13.087 31.839-29.175 31.839h2.837c18.627 0 33.78-14.283 33.78-31.839V77.548c0-2.512-2.161-4.548-4.826-4.548h-6.784Z"
 		clip-rule="evenodd"
-		opacity={0.2}
-	/>
-	<path
-		fill="#000"
-		fill-rule="evenodd"
-		d="M167.007 82.506h-8.177c.006.301.023.6.023.903v93.231c0 6.986-5.723 12.648-12.784 12.648h8.217c7.061 0 12.784-5.662 12.784-12.648V83.41c0-.302-.004-.603-.01-.904h-.053Z"
-		clip-rule="evenodd"
-		opacity={0.104}
+		opacity={0.1}
 	/>
 
 	<Face

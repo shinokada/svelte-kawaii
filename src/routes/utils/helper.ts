@@ -29,3 +29,14 @@ export const newSidebarList: ListType[] = [
 	...(Array.isArray(sidebarList) ? sidebarList : []),
 	...extra
 ];
+
+
+export function excludeIconsByKeyword(icons: { [key: string]: any }, keyword: string) {
+	const filteredIcons: { [key: string]: any } = {};
+	for (const key in icons) {
+		if (!key.includes(keyword)) {
+			filteredIcons[key] = icons[key];
+		}
+	}
+	return filteredIcons;
+}
