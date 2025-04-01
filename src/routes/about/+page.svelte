@@ -15,7 +15,7 @@
     H2,
     HighlightCompo
   } from 'runes-webkit';
-
+  import { Astronaut, Cat, Cyborg, Ghost, HumanCat, HumanDinosaur, Mug } from '$lib';
   const brand = {
     title: `${removeHyphensAndCapitalize(__NAME__)}`,
     description: `${__DESCRIPTION__}`,
@@ -113,8 +113,12 @@
     >
   </SupportBanner>
 
-  <h1 class="my-8 flex justify-center">Svelte Kawaii</h1>
-
+  <h1 class="my-8 flex justify-center">About: Svelte Kawaii</h1>
+  <img
+    style="height:240px; display:block; margin:0 auto;"
+    src="https://raw.githubusercontent.com/shinokada/svelte-kawaii/refs/heads/main/static/images/svelte-kawaii-new.png"
+    alt="svelte kawaii human dinosaur"
+  />
   <H2>Installation</H2>
   <HighlightCompo
     class="max-w-7xl"
