@@ -12,12 +12,12 @@
   --color-primary-100: #fce7f3;
   --color-primary-200: #fbcfe8;
   --color-primary-300: #f9a8d4;
-  --color-primary-400: #f472b6;
-  --color-primary-500: #ec4899;
-  --color-primary-600: #db2777;
-  --color-primary-700: #be185d;
-  --color-primary-800: #9d174d;
-  --color-primary-900: #831843;
+  --color-primary-400: #f484be;
+  --color-primary-500: #f365ac;
+  --color-primary-600: #f4519a;
+  --color-primary-700: #f22078;
+  --color-primary-800: #e72c77;
+  --color-primary-900: #de2f75;
 }
 
 @layer base {

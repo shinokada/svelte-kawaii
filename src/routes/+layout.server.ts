@@ -4,7 +4,7 @@ import { metaTitle, metaDescription, metaImg } from 'runes-meta-tags';
 
 export const load = ({ url }) => {
   const siteName = metaTitle('/', __NAME__);
-  const title = metaTitle(url.pathname, __NAME__);
+  const title = `Cute SVG Illustrations: ${metaTitle(url.pathname, __NAME__)}`
   const basicDesc =
     'Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.';
   const description = metaDescription(url.pathname, basicDesc);

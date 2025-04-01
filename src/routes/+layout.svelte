@@ -144,7 +144,7 @@
             {dropdownStatus}
             {closeDropdown}
             params={dropdownTransitionParams}
-            class="absolute top-2 -left-[90px] w-12 p-1.5"
+            class="absolute top-2 -left-[87px] w-12 p-1.5"
           >
             <DropdownUl class="py-0">
               {#if blueskyUrl}

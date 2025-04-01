@@ -9,7 +9,7 @@
   defaultSize="240"
   maxSize="300"
   step="10"
-  title="Svelte Kawaii"
+  title="Cute SVG Illustrations: Svelte Kawaii"
   {icons}
   threeTabs={false}
 >

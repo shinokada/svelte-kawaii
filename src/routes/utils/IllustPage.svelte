@@ -180,7 +180,7 @@
           {#each filteredEntries as [name, Component] (name)}
             {#if name !== 'Icon'}
               <button
-                class="group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-100 p-4 hover:scale-105 dark:border-gray-800 dark:bg-gray-800"
+                class="group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-100 p-4 hover:scale-105 dark:border-gray-800 dark:bg-gray-800 cursor-pointer"
                 onclick={() => updateIllust(name)}
                 aria-label="modal-button"
               >
