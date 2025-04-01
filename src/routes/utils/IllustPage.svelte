@@ -101,7 +101,7 @@
       let props = [];
 
       if (defaultSize !== '240') props.push(` size="${defaultSize}"`);
-      if (selectedColor !== '#A6E191') props.push(` color="${selectedColor}"`);
+      if (selectedColor !== '#a6e191') props.push(` color="${selectedColor}"`);
       if (selectedMood !== 'happy') props.push(` mood="${selectedMood}"`);
 
       const propsString =
