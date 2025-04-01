@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const title = 'Cute SVG Illustrations: Svelte Kawaii';
+const title = 'Svelte Kawaii - Cute SVG Illustrations';
 const description =
   'Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.';
 const keywords =
