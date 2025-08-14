@@ -6,7 +6,7 @@
   import { isGeneratedCodeOverflow } from './helper';
 
   let kawaiiModal = $state(false);
- 
+
   interface Props {
     icons: Record<string, Component>;
     header?: Snippet;

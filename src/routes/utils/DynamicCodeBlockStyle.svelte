@@ -1,9 +1,9 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   interface Props {
-    class?:string;
+    class?: string;
   }
-  let { class:className }:Props = $props()
+  let { class: className }: Props = $props();
   const stylesImport = import.meta.glob('./highlight/styles/*.css');
   /*eslint no-undef: "off"*/
   const localStorageName = __NAME__.replace(/[\s-]/g, '_').toUpperCase() + '_CODE_BLOCK_STYLE';
@@ -37,7 +37,7 @@
 </script>
 
 <select
-  class="w-32 border border-gray-200 p-1 text-gray-800 md:w-36 dark:bg-white dark:text-gray-800 hidden md:block {className}"
+  class="hidden w-32 border border-gray-200 p-1 text-gray-800 md:block md:w-36 dark:bg-white dark:text-gray-800 {className}"
   bind:value={selected}
 >
   {#each styles as theme}

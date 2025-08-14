@@ -1,6 +1,6 @@
 {
   "name": "svelte-kawaii",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Svelte Kawaii is a Svelte port of React Kawaii, offering cute SVG illustrations to add adorable characters to your Svelte applications. A simple way to bring some cuteness to your UI.",
   "license": "MIT",
   "homepage": "https://svelte-kawaii.codewithshin.com/",

@@ -1,5 +1,11 @@
 # svelte-kawaii
 
+## 0.3.5
+
+### Patch Changes
+
+- docs: remove svelte-5-ui-lib
+
 ## 0.3.4
 
 ### Patch Changes

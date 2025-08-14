@@ -2,13 +2,7 @@
   import '../app.css';
   import type { Component } from 'svelte';
   import { page } from '$app/state';
-  import {
-    Footer,
-    DotsHorizontalOutline,
-    GithubSolid,
-    XSolid,
-    Bluesky
-  } from 'runes-webkit';
+  import { Footer, DotsHorizontalOutline, GithubSolid, XSolid, Bluesky } from 'runes-webkit';
   import {
     Navbar,
     NavLi,
@@ -59,7 +53,7 @@
   // nav
   let nav = uiHelpers();
   let navStatus = $state(false);
-  
+
   $effect(() => {
     navStatus = nav.isOpen;
     metaTags = page.data.pageMetaTags
