@@ -1,6 +1,6 @@
 <script lang="ts">
   import IllustPage from './utils/IllustPage.svelte';
-  import { P, A } from 'svelte-5-ui-lib';
+  import { P, A } from 'flowbite-svelte';
   import * as icons from '$lib/components/';
 </script>
 

@@ -1,18 +1,12 @@
 <script lang="ts">
-  import { Select } from 'svelte-5-ui-lib';
   import type { Component, Snippet } from 'svelte';
   import { twMerge } from 'tailwind-merge';
-  import { Modal, uiHelpers } from 'svelte-5-ui-lib';
+  import { Modal, uiHelpers, Select } from 'flowbite-svelte';
   import DynamicCodeBlockHighlight from './DynamicCodeBlockHighlight.svelte';
   import { isGeneratedCodeOverflow } from './helper';
 
-  const kawaiiModal = uiHelpers();
-  let modalStatus = $state(false);
-  const closeModal = kawaiiModal.close;
-  $effect(() => {
-    modalStatus = kawaiiModal.isOpen;
-  });
-
+  let kawaiiModal = $state(false);
+ 
   interface Props {
     icons: Record<string, Component>;
     header?: Snippet;
@@ -112,7 +106,6 @@
     })()
   );
 
-  // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
@@ -120,7 +113,7 @@
     builderExpand = !builderExpand;
   };
   const updateIllust = (name: string) => {
-    kawaiiModal.toggle();
+    kawaiiModal = true;
     selectedIllust = name;
   };
 
@@ -166,7 +159,7 @@
           />
         </div>
       </div>
-      <Modal {modalStatus} {closeModal}>
+      <Modal bind:open={kawaiiModal}>
         <h3 class="font-bold">{componentName}</h3>
         <DynamicCodeBlockHighlight
           handleExpandClick={handleBuilderExpandClick}
