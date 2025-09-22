@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://svelte-kawaii.codewithshin.com/sitemap.xml
