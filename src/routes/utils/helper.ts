@@ -30,15 +30,15 @@ export const newSidebarList: ListType[] = [
   ...extra
 ];
 
-export function excludeIconsByKeyword(icons: { [key: string]: any }, keyword: string) {
-  const filteredIcons: { [key: string]: any } = {};
-  for (const key in icons) {
-    if (!key.includes(keyword)) {
-      filteredIcons[key] = icons[key];
-    }
-  }
-  return filteredIcons;
-}
+// export function excludeIconsByKeyword(icons: { [key: string]: any }, keyword: string) {
+//   const filteredIcons: { [key: string]: any } = {};
+//   for (const key in icons) {
+//     if (!key.includes(keyword)) {
+//       filteredIcons[key] = icons[key];
+//     }
+//   }
+//   return filteredIcons;
+// }
 
 export function copyToClipboard(text: string): Promise<void> {
   return navigator.clipboard
@@ -52,11 +52,11 @@ export function copyToClipboard(text: string): Promise<void> {
     });
 }
 
-export function replaceLibImport(componentString: string): string {
-  return componentString
-    .replace(/from ["']\$lib["']/g, "from 'svelte-5-ui-lib'")
-    .replace(/from ["']\$lib\//g, "from 'svelte-5-ui-lib/");
-}
+// export function replaceLibImport(componentString: string): string {
+//   return componentString
+//     .replace(/from ["']\$lib["']/g, "from 'svelte-5-ui-lib'")
+//     .replace(/from ["']\$lib\//g, "from 'svelte-5-ui-lib/");
+// }
 
 export const isGeneratedCodeOverflow = (code: string): boolean => {
   const lines = code.split('\n');

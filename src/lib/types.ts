@@ -19,6 +19,7 @@ export type KawaiiProps = SVGAttributes<SVGElement> & {
   uniqueId?: string;
   ariaLabel?: string;
   title?: TitleType;
+  focusable?: 'true' | 'false' | 'auto';
   desc?: DescType;
 };
 

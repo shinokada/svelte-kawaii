@@ -44,23 +44,13 @@
     classDiv2 = 'w-full p-4 grid grid-cols-1 lg:grid-cols-3 gap-4 bg-gray-100 dark:bg-gray-800',
     div3Class,
     classDiv3 = 'grid grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 dark:text-white place-items-center',
-    div4Class = 'w-full place-items-center p-4 border border-gray-200 dark:border-gray-800 rounded-lg dark:bg-gray-800 hover:scale-105',
-    labelClass = 'text-lg py-4',
-    searchClass,
-    classSearch = 'block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500',
-    tab1Class,
-    classTab1 = 'grid grid-cols-1 gap-8 px-4 pt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 dark:text-white',
-    tab2Class = 'flex items-center text-lg',
     rangeClass,
     classRange = 'mt-4 h-2 w=[100px] sm:w-[250px] cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700',
-    contentClass = 'rounded-lg dark_bg_theme mt-4',
     title,
-    sizeByTailwind,
     minSize = '50',
     defaultSize = $bindable('210'),
     maxSize = '200',
     step = '10',
-    threeTabs = true,
     class: className = '',
     ...restProps
   }: Props = $props();
@@ -107,7 +97,7 @@
   );
 
   let builder = uiHelpers();
-  let builderExpand = $state(false);
+  let builderExpand = $derived(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;

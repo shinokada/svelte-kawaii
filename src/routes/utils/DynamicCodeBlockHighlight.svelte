@@ -2,7 +2,7 @@
   import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
   import markdown from 'highlight.js/lib/languages/markdown';
   import { Button, Badge } from 'flowbite-svelte';
-  import { copyToClipboard, replaceLibImport } from './helper';
+  import { copyToClipboard } from './helper';
   import { highlightcompo } from './theme';
 
   interface Props {
@@ -15,8 +15,7 @@
     buttonClass?: string;
     codeLang?: string;
     class?: string;
-    expanded?: boolean;
-    replaceLib?: boolean;
+    // replaceLib?: boolean;
   }
 
   let {
@@ -27,19 +26,19 @@
     codeLang,
     badgeClass,
     buttonClass,
-    replaceLib,
+    // replaceLib,
     class: className
   }: Props = $props();
 
-  if (replaceLib) {
-    code = replaceLibImport(code);
-  }
+  // if (replaceLib) {
+  //   code = replaceLibImport(code);
+  // }
 
-  $effect(() => {
-    if (replaceLib) {
-      code = replaceLibImport(code);
-    }
-  });
+  // $effect(() => {
+  //   if (replaceLib) {
+  //     code = replaceLibImport(code);
+  //   }
+  // });
 
   const { base, badge, button } = $derived(highlightcompo());
   let copiedStatus = $state(false);

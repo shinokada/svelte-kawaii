@@ -3,7 +3,6 @@
   import {
     removeHyphensAndCapitalize,
     HomeCards,
-    SupportBanner,
     TechInfo,
     BellActiveAltOutline,
     InfoCircleOutline,
@@ -12,10 +11,10 @@
     TruckFastSolid,
     Visualstudiocode,
     info,
-    H2,
-    HighlightCompo
+    H2
   } from 'runes-webkit';
-  import { Astronaut, Cat, Cyborg, Ghost, HumanCat, HumanDinosaur, Mug } from '$lib';
+  import { HighlightCompo } from 'svelte-rune-highlight';
+
   const brand = {
     title: `${removeHyphensAndCapitalize(__NAME__)}`,
     description: `${__DESCRIPTION__}`,
@@ -97,41 +96,21 @@
   });
 </script>
 
-<div class="relative mx-auto mt-8 h-full max-w-7xl overflow-y-auto px-8 pb-20">
-  <SupportBanner class="mt-4">
-    To Keep It Going, Please Show Your Love.<a
-      href="https://ko-fi.com/Z8Z2CHALG"
-      target="_blank"
-      aria-label="Buy Me a Coffee at ko-fi.com"
-      ><img
-        height="40"
-        style="border:0px;height:40px;"
-        src="https://storage.ko-fi.com/cdn/kofi3.png?v=3"
-        alt="Buy Me a Coffee at ko-fi.com"
-      /></a
-    >
-  </SupportBanner>
+<h1 class="my-8 flex justify-center">About: Svelte Kawaii</h1>
+<img
+  style="height:240px; display:block; margin:0 auto;"
+  src="https://raw.githubusercontent.com/shinokada/svelte-kawaii/refs/heads/main/static/images/svelte-kawaii-new.png"
+  alt="svelte kawaii human dinosaur"
+/>
+<H2>Installation</H2>
+<HighlightCompo class="max-w-7xl" lang="ts" code={modules['./md/installation.md'] as string} />
+<H2>Props</H2>
+<HighlightCompo class="max-w-7xl" lang="ts" code={modules['./md/props.md'] as string} />
+<H2>Types</H2>
+<HighlightCompo class="mb-8 max-w-7xl" lang="ts" code={modules['./md/types.md'] as string} />
 
-  <h1 class="my-8 flex justify-center">About: Svelte Kawaii</h1>
-  <img
-    style="height:240px; display:block; margin:0 auto;"
-    src="https://raw.githubusercontent.com/shinokada/svelte-kawaii/refs/heads/main/static/images/svelte-kawaii-new.png"
-    alt="svelte kawaii human dinosaur"
-  />
-  <H2>Installation</H2>
-  <HighlightCompo
-    class="max-w-7xl"
-    codeLang="ts"
-    code={modules['./md/installation.md'] as string}
-  />
-  <H2>Props</H2>
-  <HighlightCompo class="max-w-7xl" codeLang="ts" code={modules['./md/props.md'] as string} />
-  <H2>Types</H2>
-  <HighlightCompo class="mb-8 max-w-7xl" codeLang="ts" code={modules['./md/types.md'] as string} />
-
-  <H2>Features</H2>
-  <HomeCards cards={filteredCards} />
-  <h2 class="my-8 flex justify-center">Info</h2>
-  <HomeCards cards={newInfo} />
-  <TechInfo {...pkg} />
-</div>
+<H2>Features</H2>
+<HomeCards cards={filteredCards} />
+<h2 class="my-8 flex justify-center">Info</h2>
+<HomeCards cards={newInfo} />
+<TechInfo {...pkg} />

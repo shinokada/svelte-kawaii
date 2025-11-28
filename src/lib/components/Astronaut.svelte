@@ -9,22 +9,25 @@
     ariaLabel = 'astronaut',
     title,
     desc,
+    focusable = 'false',
     ...restProps
   }: Props = $props();
 
   const figmaFaceScale = getFaceScale(40.5);
   const figmaFaceXYPosition = '99.82 67.77';
-  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  let ariaDescribedby = $derived(`${title?.id || ''} ${desc?.id || ''}`.trim());
   const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
 <svg
   width={size}
   height={size}
+  {focusable}
   viewBox="0 0 240 240"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
-  aria-label={ariaLabel}
+  aria-label={title?.id ? undefined : ariaLabel}
+  aria-labelledby={title?.id || undefined}
   aria-describedby={hasDescription ? ariaDescribedby : undefined}
   {...restProps}
 >

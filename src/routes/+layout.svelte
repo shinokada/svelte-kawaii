@@ -8,7 +8,6 @@
     NavLi,
     NavBrand,
     NavUl,
-    uiHelpers,
     DarkMode,
     Dropdown,
     NavHamburger,
@@ -18,7 +17,7 @@
   import { Runatics } from 'runatics';
   import DynamicCodeBlockStyle from './utils/DynamicCodeBlockStyle.svelte';
 
-  let activeUrl = $state(page.url.pathname);
+  let activeUrl = $derived(page.url.pathname);
   $effect(() => {
     activeUrl = page.url.pathname;
   });
@@ -31,7 +30,7 @@
   let { children, data } = $props();
   const analyticsId = data.ANALYTICS_ID_SVELTE_LIB;
   // metaTags
-  let metaTags = $state(
+  let metaTags = $derived(
     page.data.pageMetaTags
       ? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags)
       : data.layoutMetaTags
@@ -50,12 +49,7 @@
   const twitterUrl = 'https://twitter.com/shinokada';
   const blueskyUrl = 'https://bsky.app/profile/codewithshin.com';
 
-  // nav
-  let nav = uiHelpers();
-  let navStatus = $state(false);
-
   $effect(() => {
-    navStatus = nav.isOpen;
     metaTags = page.data.pageMetaTags
       ? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags)
       : data.layoutMetaTags;

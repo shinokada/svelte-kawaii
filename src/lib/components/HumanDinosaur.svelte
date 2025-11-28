@@ -9,12 +9,13 @@
     ariaLabel = 'human dinosaur',
     title,
     desc,
+    focusable = 'false',
     ...restProps
   }: Props = $props();
 
   const figmaFaceScale = getFaceScale(46.89);
   const figmaFaceXYPosition = '97.66 123.76';
-  let ariaDescribedby = `${title?.id || ''} ${desc?.id || ''}`;
+  let ariaDescribedby = $derived(`${title?.id || ''} ${desc?.id || ''}`.trim());
   const hasDescription = $derived(!!(title?.id || desc?.id));
 </script>
 
@@ -22,8 +23,11 @@
   xmlns="http://www.w3.org/2000/svg"
   width={size}
   height={size}
+  {focusable}
   viewBox="0 0 240 240"
   fill="none"
+  aria-label={title?.id ? undefined : ariaLabel}
+  aria-labelledby={title?.id || undefined}
   aria-describedby={hasDescription ? ariaDescribedby : undefined}
   {...restProps}
 >
