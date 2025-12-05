@@ -1,5 +1,11 @@
 # svelte-kawaii
 
+## 0.4.1
+
+### Patch Changes
+
+- fix: change let to const and update ariaDescribedby
+
 ## 0.4.0
 
 ### Minor Changes

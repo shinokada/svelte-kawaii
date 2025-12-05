@@ -16,8 +16,7 @@
   const figmaFaceScale = getFaceScale(53.99);
   const figmaFaceXYPosition = '93 156.26';
   const chocolateFillColor = '#8C6A57';
-  let ariaDescribedby = $derived(`${title?.id || ''} ${desc?.id || ''}`.trim());
-  const hasDescription = $derived(!!(title?.id || desc?.id));
+  const ariaDescribedby = $derived([title?.id, desc?.id].filter(Boolean).join(' ') || undefined);
 </script>
 
 <svg
@@ -27,9 +26,9 @@
   {focusable}
   viewBox="0 0 240 240"
   fill="none"
-  aria-label={title?.id ? undefined : ariaLabel}
+  aria-label={ariaLabel || undefined}
   aria-labelledby={title?.id || undefined}
-  aria-describedby={hasDescription ? ariaDescribedby : undefined}
+  aria-describedby={ariaDescribedby}
   {...restProps}
 >
   {#if title?.id && title.title}
