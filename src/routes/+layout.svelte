@@ -17,11 +17,6 @@
   import { Runatics } from 'runatics';
   import DynamicCodeBlockStyle from './utils/DynamicCodeBlockStyle.svelte';
 
-  let activeUrl = $derived(page.url.pathname);
-  $effect(() => {
-    activeUrl = page.url.pathname;
-  });
-
   type LiType = {
     name: string;
     href: string;
@@ -29,6 +24,7 @@
   };
   let { children, data } = $props();
   const analyticsId = $derived(data.ANALYTICS_ID_SVELTE_LIB);
+  let activeUrl = $derived(page.url.pathname);
   // metaTags
   let metaTags = $derived(
     page.data.pageMetaTags
@@ -48,12 +44,6 @@
   const githubUrl = `https://github.com/shinokada/${__NAME__}`;
   const twitterUrl = 'https://twitter.com/shinokada';
   const blueskyUrl = 'https://bsky.app/profile/codewithshin.com';
-
-  $effect(() => {
-    metaTags = page.data.pageMetaTags
-      ? deepMerge(page.data.layoutMetaTags, page.data.pageMetaTags)
-      : data.layoutMetaTags;
-  });
   let activeClass = 'p-2 text-base hover:text-gray-600';
   let nonActiveClass = 'p-2 text-base hover:text-gray-600';
 </script>
